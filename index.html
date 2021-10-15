@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Blog</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+            font-weight: normal;
+            font-family: "Karma", sans-serif;
+            box-sizing: border-box;
+            transition-property: background-color opacity width;
+            transition-duration: 0.5s;
+            transition-timing-function: linear;
+            transition-delay: 0.1s;
+        }
+        .nav{
+            background-color: white;
+            display: block;
+            position: fixed;
+            z-index: 999;
+            width: 0%;
+            height: 1000px;
+            display: none;
+        }
+        .nav a{
+            display: block;
+            color: black;
+            padding-top: 32px;
+            padding-bottom: 32px;
+            padding-left: 16px;
+            font-size: 1.5em;
+        }
+        .nav a:hover{
+            background-color: lightgrey;
+        }
+        .nav-bar{
+            display: flex;
+            justify-content: space-around;
+            background-color: white;
+            position: fixed;
+            width: 100%;
+            z-index: 99;
+            padding-top: 20px;
+            padding-bottom: 5px;
+            text-shadow: 5px 5px 15px black;
+        }
+        
+        .nav-bar img{
+            width: 60%;
+        }
+        .nav-bar img:hover{
+            cursor: pointer;
+        }
+        .first-class-foods, .middel-class-foods{
+            display: flex;
+            margin-bottom: 50px;
+            margin-right: 10%;
+            margin-left: 10%;
+            text-align: center;
+        }
+       .first-class-foods .img, .middel-class-foods .img{
+            width: 25%;
+            margin-right: 1%;
+        }
+        .first-class-foods .img img, .middel-class-foods .img img{
+            width: 100%;
+            height: 400px;   
+        }
+        .first-class-foods .img img:hover, .middel-class-foods .img img:hover{
+            opacity: 0.5;
+            cursor: pointer;
+        }
+        .pagination{
+            display: inline-block;
+            margin-bottom: 50px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+        }
+        .pagination a{
+            color: black;
+            padding: 8px 16px;
+            text-decoration: none;
+            float: left;
+        }
+        .pagination a.active {
+            background-color: black;
+            color: white;
+        }
+        .pagination a:hover:not(.active) {
+            background-color: black;
+            color: white;
+        }
+        .pagination a.active:hover {
+            background-color: darkgrey;
+        }
+        hr{
+            margin: 0 10% 0 10%;
+            background-color: azure;
+        }
+        .about-me{
+            text-align: center;
+            margin-left: 10%;
+            margin-right: 10%;
+            text-shadow: 5px 5px 80px black;
+        }
+        .about-me img{
+            width: 50%;
+            border-radius: 5px;
+            opacity: 0.6;
+        }
+        .footer{
+            display: flex;
+            justify-content: space-around;
+            margin-right: 10%;
+            margin-left: 10%;
+            margin-bottom: 50px;
+        }
+        .footer-img:hover{
+            background-color: darkgrey;
+            cursor: pointer;
+        }
+        .footer-img:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .footer .third-col a{
+            display: inline-block;
+            background-color: dimgray;
+            color: white;
+            padding: 5px 10px;
+            margin: 5px 1px;
+            font-size: 0.6em;
+        }
+        .footer > div{
+                width: 25%;
+            }
+        .empty{
+            height: 120px;
+            background-color: white;
+        }
+        @media (max-width: 1000px){
+            .first-class-foods .img img, .middel-class-foods .img img{
+                height: 300px;
+            }
+        }
+        @media (max-width: 700px){
+            .first-class-foods, .middel-class-foods{
+                display: block;
+            }
+            .first-class-foods .img, .middel-class-foods .img{
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 50px;
+            }
+            .about-me img{
+                width: 70%;
+            }
+            .footer{
+                display: block;
+            }
+            .footer > div{
+                width: 100%;
+            }
+            .third-col{
+                margin-top: 20px
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="nav" id="nav">
+            <a href="#" onclick="makeInvisible()">Close Menu</a>
+            <a href="#food" onclick="makeInvisible()">Food</a>
+            <a href="#about" onclick="makeInvisible()">About</a>
+        </div>
+        <div class="nav-bar">
+            <div><img onclick="makeVisible()" src="menu.png"></div>
+            <!--<div><button onclick="makeVisible()">Click me</button></div>-->
+            <div><h1>My Food</h1></div>
+            <div><h1>Mail</h1></div>
+        </div>    
+        <div class="empty"></div>
+        <div class="first-class-foods" id="food">
+            <div class="img">
+                <img src="sandwich.jpg" alt="sandwich">
+                <h2 style="margin-bottom: 15px;">The Perfect Sandwich, A Real NYC Classic</h2>
+                <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+            <div class="img">
+                <img src="steak.jpg" alt="steak">
+                <h2 style="margin-bottom: 15px;">Let Me Tell You About This Steak</h2>
+                <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+            <div class="img">
+                <img src="cherries.jpg" alt="cherries">
+                <h2 style="margin-bottom: 15px;">Cherries, interrupted</h2>
+                <p>Lorem ipsum text praesent tincidunt ipsum lipsum. What else?</p>
+            </div>
+            <div class="img" style="margin-right: 0">
+                <img src="wine.jpg" alt="wine">
+                <h2 style="margin-bottom: 15px;">Once Again, Robust Wine and Vegetable Pasta</h2>
+                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+        </div>
+        
+        <div class="middel-class-foods">
+            <div class="img">
+                <img src="popsicle.jpg" alt="popsicle">
+                <h2 style="margin-bottom: 15px;">All I Need Is a Popsicle</h2>
+                <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+            <div class="img">
+                <img src="salmon.jpg" alt="salmon">
+                <h2 style="margin-bottom: 15px;">Salmon For Your Skin</h2>
+                <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+            <div class="img">
+                <img src="sandwich-2.jpg" alt="sandwich-2">
+                <h2 style="margin-bottom: 15px;">The Perfect Sandwich, A Real Classic</h2>
+                <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+            <div class="img" style="margin-right: 0">
+                <img src="croissant.jpg" alt="croissant">
+                <h2 style="margin-bottom: 15px;">Le French</h2>
+                <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+            </div>
+        </div>
+        <div class="pagination-wrapper">
+            <div class="pagination">
+                  <a href="#">&laquo;</a>
+                  <a href="#">1</a>
+                  <a class="active" href="#">2</a>
+                  <a href="#">3</a>
+                  <a href="#">4</a>
+                  <a href="#">5</a>
+                  <a href="#">6</a>
+                  <a href="#">&raquo;</a>
+            </div>
+        </div>
+            
+        
+        <hr>
+        
+        <div class="about-me" id="about">
+            <h2 style="margin: 70px 0 40px 0;">About Me, The Food Woman</h2>
+            <img src="chef.jpg" alt="chef">
+            <h2 style="margin: 60px 0 30px 0;">I am Who I Am!</h2>
+            <h3 style="margin-bottom: 20px;">With Passion For Real, Good Food</h3>
+            <p style="margin-bottom: 70px;">Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>   
+        </div>
+        
+        <hr style="margin-bottom: 50px;">
+        
+        <div class="footer">
+            <div class="first-col">
+                <h2 style="margin-bottom: 20px;">FOOTER</h2>
+                <p style="margin-bottom: 20px;">Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
+                <p style="margin-bottom: 20px;">Powered by <span style="text-decoration: underline;">Surafel</span></p>
+            </div>
+            <div class="second-col">
+                <h2 style="margin-bottom: 20px;">BLOG POSTS</h2>
+                <div class="footer-img">
+                    <img src="workshop.jpg" alt="workshop" style="float: left; width: 20%;">
+                    <p style="float: left;">Lorem Sed mattis nunc</p>
+                </div>
+                <hr style="margin: 15px;">
+                <div class="footer-img">
+                    <img src="gondol.jpg" alt="gondol" style="float: left; width: 20%;">
+                    <p style="float: left;">Ipsum Praes tinci sed</p>
+                </div>
+                
+            </div>
+            <div class="third-col">
+                <h2 style="margin-bottom: 20px;">POPULAR TAGS</h2>
+                <a href="#" class="active" style="background-color: black;">Travel</a>
+                <a href="#">New York</a>
+                <a href="#">Dinner</a>
+                <a href="#">Salmon</a>
+                <a href="#">France</a>
+                <a href="#">Drinks</a>
+                <a href="#">Ideas</a>
+                <a href="#">Flavors</a>
+                <a href="#">Cuisine</a>
+                <a href="#">Chicken</a>
+                <a href="#">Dressing</a>
+                <a href="#">Fried</a>
+                <a href="#">Fish</a>
+                <a href="#">Duck</a>
+            </div>
+        </div>
+    </div>
+</body>
+    <script>
+        function makeInvisible(){
+            document.getElementById("nav").style.width = "0%";
+            document.getElementById("nav").style.display = "none";
+        }
+        function makeVisible(){
+            document.getElementById("nav").style.display = "block";
+            document.getElementById("nav").style.width = "40%";
+            document.getElementById("wrapper").style.backgroundColor= "grey";
+        }
+    </script>
+</html>

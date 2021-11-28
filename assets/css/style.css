@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    list-style-type: none;
+    font-weight: normal;
+    font-family: "Karma", sans-serif;
+    box-sizing: border-box;
+    /*transition-property: background-color opacity width;
+    transition-duration: 0.5s;
+    transition-timing-function: linear;
+    transition-delay: 0.1s;*/
+}
+:root{
+    --black-900: #000000;
+    --black-700: #555555;
+    --black-600: #666666;
+    --black-300: #bbbbbb;
+    --black-100: #dddddd;
+    --black-50: #eff0f4;
+    --outer-shadow: 3px 3px 10px #d0d0d0, -3px -3px 3px #f8f8f8;
+    --outer-shadow-0: 0 0 0 #d0d0d0, 0 0 0 #f8f8f8;
+    --inner-shadow: inset 3px 3px 3px #d0d0d0, inset -3px -3px 3px #f8f8f8;
+    --inner-shawo-0: inset 0 0 0 #d0d0d0, inset 0 0 0 #f8f8f8;
+}
+html{
+    margin: auto;
+}
+.nav-wrapper{
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .2);
+    position: fixed;
+    transition: all .3s linear;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 100;
+    margin: auto;
+}
+nav{
+    background-color: var(--black-50);
+    height: 100vh;
+    width: 25%;
+    top: 0;
+    left: 0;
+    transform: translateX(-10%);
+}
+nav a{
+    display: block;
+    padding: 25px 0 25px 20px;
+    color: var(--black-900);
+    transition: all .3s linear;
+}
+nav a:hover,
+nav a:active{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, .2);
+}
+.show-nav-wrapper{
+    visibility: visible;
+    opacity: 1;
+}
+.show-nav-wrapper nav{
+    transform: translateX(0);
+}
+.nav-bar{
+    background-color: white;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-around;
+    position: fixed;
+    padding: 15px 0;
+    width: 100%;
+    align-content: center;
+    box-shadow: 3px 3px 10px #d0d0d0;
+}
+.nav-bar img:first-child{
+    width: 1.5rem;
+}
+.nav-bar img:first-child:hover{
+    cursor: pointer;
+}
+.empty{
+    background-color: transparent;
+    padding: 50px 0;
+    width: 100%;
+}
+.foods-wrapper{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    color: var(--black-700);
+}
+.foods-wrapper img{
+    width: 100%;
+    height: 400px;
+    cursor: pointer;
+    transition: all .3s linear;
+}
+.foods-wrapper img:hover{
+    transform: scale(0.8) rotate(-15deg);
+    opacity: .6;
+    border-radius: 20px;
+    box-shadow: 3px 3px 10px #d0d0d0;
+}
+.full-image{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.85);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+}
+.full-image img{
+    width: 90%;
+    max-width: 500px;
+}
+.full-image span{
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+.pagination-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+.pagination a{
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    float: left;
+}
+.pagination a.active {
+    background-color: var(--black-900);
+    color: white;
+}
+.pagination a:hover:not(.active) {
+    background-color: var(--black-900);
+    color: white;
+}
+.pagination a.active:hover {
+    background-color: var(--black-700);
+}
+hr{
+    margin: 0 10%;
+    background-color: var(--black-50);
+}
+.about-me{
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-shadow: 5px 5px 80px black;
+}
+footer{
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: auto auto auto;
+    margin: 0 10% 50px 10%;
+}
+.footer-img:hover{
+    background-color: darkgrey;
+    cursor: pointer;
+}
+.footer-img::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.third-col a{
+    display: inline-block;
+    background-color: var(--black-700);
+    color: white;
+    padding: 5px 10px;
+    margin: 5px 1px;
+    font-size: 0.6em;
+}
+/*
+
+@media (max-width: 1000px){
+    .first-class-foods .img img, .middel-class-foods .img img{
+        height: 300px;
+    }
+}
+@media (max-width: 700px){
+    .first-class-foods, .middel-class-foods{
+        display: block;
+    }
+    .first-class-foods .img, .middel-class-foods .img{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+    .about-me img{
+        width: 70%;
+    }
+    .footer{
+        display: block;
+    }
+    .footer > div{
+        width: 100%;
+    }
+    .third-col{
+        margin-top: 20px
+    }
+}
+*/

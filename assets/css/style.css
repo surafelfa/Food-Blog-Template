@@ -187,33 +187,13 @@ footer{
     margin: 5px 1px;
     font-size: 0.6em;
 }
-/*
 
-@media (max-width: 1000px){
-    .first-class-foods .img img, .middel-class-foods .img img{
-        height: 300px;
-    }
-}
-@media (max-width: 700px){
-    .first-class-foods, .middel-class-foods{
+
+@media only screen and (max-width: 700px){
+    .foods-wrapper{
         display: block;
     }
-    .first-class-foods .img, .middel-class-foods .img{
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 50px;
-    }
-    .about-me img{
-        width: 70%;
-    }
-    .footer{
+    footer{
         display: block;
     }
-    .footer > div{
-        width: 100%;
-    }
-    .third-col{
-        margin-top: 20px
-    }
 }
-*/

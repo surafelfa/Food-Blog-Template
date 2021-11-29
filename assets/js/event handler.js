@@ -1,4 +1,4 @@
-document.querySelector("html").style.width = screen.availWidth - 15 + "px"; //calc(100% - 100px);
+document.querySelector("html").style.width = screen.availWidth - 15 + "px";
 
 document.querySelectorAll(".close-nav").forEach(item=>{
     item.addEventListener("click", function(){
